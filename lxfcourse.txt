@@ -20,3 +20,6 @@ git log --pretty=oneline		//历史记录简洁显示
 git reset --hard HEAD^			//回到上次版本，HEAD^^表示上上次版本，HEAD~100上100次
 git reset --hard c997			//回到指针C997XXX指向的版本
 git reflog						//查看命令历史
+
+廖雪峰Lec3：工作区和暂存区
+
