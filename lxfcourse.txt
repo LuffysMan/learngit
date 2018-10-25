@@ -29,6 +29,13 @@ git status
 git commit -m "understand how stage works"
 git status
 
+廖雪峰Lec5：管理修改
+//先修改readme.txt
+git add readme.txt
+//再次修改readme.txt
+git commit -m "understand modify"		//第二次修改并没有提交
+
+
 
 
 
