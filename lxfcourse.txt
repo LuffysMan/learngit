@@ -30,10 +30,44 @@ git commit -m "understand how stage works"
 git status
 
 廖雪峰Lec5：管理修改
-//先修改readme.txt
+//第一次修改readme.txt
 git add readme.txt
-//再次修改readme.txt
-git commit -m "understand modify"		//第二次修改并没有提交
+//次二次修改readme.txt
+git commit -m "understand modify"		//第二次修改并没有提交,提交的是第一次的修改
+
+廖雪峰Lec6：撤销修改
+//修改readme.txt
+git checkout -- readme.txt				//撤销工作区修改
+//修改readme.txt
+git add readme.txt
+git reset HEAD readme.txt				//撤销add操作，离开stage，返回工作区
+git checkout -- readme.txt				//撤销工作区修改
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
