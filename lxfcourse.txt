@@ -21,5 +21,16 @@ git reset --hard HEAD^			//回到上次版本，HEAD^^表示上上次版本，HE
 git reset --hard c997			//回到指针C997XXX指向的版本
 git reflog						//查看命令历史
 
-廖雪峰Lec3：工作区和暂存区
+廖雪峰Lec4：工作区和暂存区
+vi license.txt					//创建文件(i:编辑模式，esc：命令模式；命令模式下q:退出编辑，q!：强制退出编辑，x:退出编辑并保存)
+git status
+git add license.txt
+git status
+git commit -m "understand how stage works"
+git status
+
+
+
+
+
 
