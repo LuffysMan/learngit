@@ -43,6 +43,19 @@ git add readme.txt
 git reset HEAD readme.txt				//撤销add操作，离开stage，返回工作区
 git checkout -- readme.txt				//撤销工作区修改
 
+廖雪峰Lec7：删除文件
+//查看当前工作区文件列表
+ls
+//随便创建一个新文件
+vi test.txt
+git add test.txt
+git commit -m "add test.txt"
+rm test.txt								//删除本地文件，但是远程仓库还在
+git status								//提示不一致
+git rm test.txt
+git commit -m "delete test.txt"			//从远程仓库删除
+//如果不小心误删了文件，可以从远程仓库恢复
+git checkout --text.txt
 
 
 
