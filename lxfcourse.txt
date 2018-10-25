@@ -1,0 +1,7 @@
+廖雪峰：创建版本库
+cd E:/cuiyue/T_Git
+mkdir learngit
+pwd
+git init
+git add readme.txt
+git commit -m "first commit"
