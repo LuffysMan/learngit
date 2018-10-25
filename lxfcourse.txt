@@ -5,3 +5,11 @@ pwd
 git init
 git add readme.txt
 git commit -m "first commit"
+
+廖雪峰：修改文件并提交
+git status			//查看本地与远程是否一致
+git diff			//查看差别细节
+git add readme.txt
+git add lxfcourse.txt
+git status
+git commit -m "liaoxuefeng course stury"
