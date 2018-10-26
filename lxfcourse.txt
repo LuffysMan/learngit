@@ -144,6 +144,43 @@ git log --graph --pretty=oneline --abbrev-commit	//查看分支合并情况
 小伙伴们各自建立自己的分支比如：LuffysMan,Lisann
 2.合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。
 
+廖雪峰Lec14:Bug分支
+//假设当前正在进行readme.txt 2.0版本的制作，处于分支dev，突然接到代号101bug修复任务，要求紧急修复master上readme.txt的一个bug
+git status 								//处于分支dev,且readme.txt 已被修改
+git stash 								//保存当前工作状态到另一个。。平行宇宙吧
+git status 								//查看状态，工作区是干净的
+
+git checkout master						//在master上创建issue101分支用来修复bug
+git checkout -b issue101				
+vi readme.txt 							//修复bug
+git add readme.txt
+git commit -m "fix bug101"
+git checkout master
+git merge --no-ff -m "merged bug fix 101" issue101	//合并分支到master
+git branch -d issue101
+
+git checkout dev						//切换回dev准备继续readme.txt 2.0版本的制作~~
+git status 								//发现工作区是空的
+git stash list 							//查看保存到平行宇宙的工作
+git stash pop 							//从平行宇宙取回工作哈哈
+git stash list 							//平行宇宙里面是空的
+
+小结
+对此场景有疑问的，我觉得这个网友的说法还挺好滴（下面内容来自Shi_Chunyuan）
+1、master 上面发布的是A的1.0版本
+2、dev 上开发的是A的2.0版本
+3、这时，用户反映 1.0版本存在漏洞，有人利用这个漏洞开外挂
+4、需要从dev切换到master去填这个漏洞，正常必须先提交dev目前的工作，才能切换。
+5、而dev的工作还未完成，不想提交，所以先把dev的工作stash一下。然后切换到master
+6、在master建立分支issue101并切换.
+7、在issue101上修复漏洞。
+8、修复后，在master上合并issue101
+9、切回dev，恢复原本工作，继续工作。
+
+补充：git stash pop 等同于 git stash apply, git stash drop
+
+
+
 
 
 
