@@ -128,6 +128,21 @@ git commit -m "fixed conflict"			//解决冲突重新提交
 git log --graph --pretty=oneline --abbrev-commit  	//用带参数的git log 查看分支的合并情况
 git branch -d feature1					//删除分支feature1
 
+廖雪峰Lec13：分支管理策略
+git checkout -b dev						//创建新分支
+vi readme.txt  							//修改readme.txt
+git add readme.txt
+git commit -m "add merge"
+
+git checkout master	  					//切换回master
+git merge --no-ff -m "merge with no-ff" dev 		//使用带参数的merge，no-ff表示不适用fastforward
+git log --graph --pretty=oneline --abbrev-commit	//查看分支合并情况
+
+小结
+1.实际开发中，master应该是非常稳定的一个分支，只用来发布新版本，平时不能在上面干活；
+干活都是在dev分支上，也就是说dev分支是不稳定的，小伙伴们时不时更新dev，发布1.0版本时再合并到master上；
+小伙伴们各自建立自己的分支比如：LuffysMan,Lisann
+2.合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而fast forward合并就看不出来曾经做过合并。
 
 
 
