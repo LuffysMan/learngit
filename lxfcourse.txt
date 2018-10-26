@@ -180,7 +180,20 @@ git stash list 							//平行宇宙里面是空的
 补充：git stash pop 等同于 git stash apply, git stash drop
 
 
+廖雪峰Lec15:Feature分支
+//你正在dev上码代码，突然boss让你开发一个新的NB Game; OK,fine,let's do it 
+git status 								//处于dev
+git branch -b feature-nbgame 					//新建分支用于开发nbgame！
+vi nbgame.py 							//成功搞定
+git add nbgame.py
+git commit -m "add nbgame"	
+git checkout dev 			//cao,boss说资金不够，nbgame项目取消；OK,f(f)i(u)n(c)e(k)
+git branch -d feature-nbgame 		//纳尼，删除不了？
+git branch -D feature-nbgame 		//用大写参数-D即可
 
+小结
+开发一个新的feature，最好新建一个分支
+如果要丢弃一个没有合并过的分支，可以通过git branch -D feature-name 强行丢弃
 
 
 
