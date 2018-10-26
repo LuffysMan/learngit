@@ -57,6 +57,7 @@ git commit -m "delete test.txt"			//从远程仓库删除
 //如果不小心误删了文件，可以从远程仓库恢复
 git checkout --text.txt
 
+学习笔记第二篇：本地仓库和远程仓库
 廖雪峰Lec8：创建一个远程仓库(你可以自己搭建Git服务器，不过大家一般用Github~~)
 //1.创建SSH Key
 ssh-keygen -t rsa -C "youremail@example.com"		//在C:\Users\Administrator\.ssh下有id_rsa和id_rsa.pub两个文件	
@@ -78,8 +79,31 @@ git clone git@github.com:LuffysMan/gitskills.git  		//在本地合适的位置�
 cd gitskills/
 ls  													//查看本地，readme.md已经有了
 
+学习笔记第三篇：分支管理
+廖雪峰Lec11：创建和管理分支
+git branch dev							//创建分支命名为：dev
+git checkout dev						//将指针HEAD由当前分支切换到dev
+git branch 								//查看当前分支目录，应该有master和dev
+cat readme.txt 							//查看内容，记为view1
+修改readme.txt
+git add readme.txt
+git commit -m "branch test"				//对readme.txt修改提交到当前分支dev
 
+git checkout master						//切换到master
+cat readme.txt 							//查看内容，可以发现与view1相同
 
+git merge dev 							//将分支dev合并到当前分支master
+git branch -d dev 						//删除分支dev
+git branch								//只剩下master
+
+小结
+Git鼓励大量使用分支：
+查看分支：git branch
+创建分支：git branch <name>
+切换分支：git checkout <name>
+创建+切换分支：git checkout -b <name>
+合并某分支到当前分支：git merge <name>
+删除分支：git branch -d <name>
 
 
 
