@@ -57,13 +57,13 @@ git commit -m "delete test.txt"			//从远程仓库删除
 //如果不小心误删了文件，可以从远程仓库恢复
 git checkout --text.txt
 
-廖雪峰Lec8：创建一个远程仓库   你可以自己搭建Git服务器，不过大家一般用Github~~
+廖雪峰Lec8：创建一个远程仓库(你可以自己搭建Git服务器，不过大家一般用Github~~)
 //1.创建SSH Key
 ssh-keygen -t rsa -C "youremail@example.com"		//在C:\Users\Administrator\.ssh下有id_rsa和id_rsa.pub两个文件	
 //2.登陆GitHub，打开“Account settings”，“SSH Keys”页面点“Add SSH Key”，填上任意Title，在Key文本框里粘贴id_rsa.pub文件的内容
 //3.点“Add Key”，你就应该看到已经添加的Key，这样就可以往Github远程仓库存东西了吧哈哈
 
-廖雪峰Lec9：添加远程库（把远程仓库和本地仓库关联起来，并将本地仓库的东西推送到远程库）
+廖雪峰Lec9：添加远程库(把远程仓库和本地仓库关联起来，并将本地仓库的东西推送到远程库)
 先登录网页版github创建一个repository，命名为learngit
 git add remote origin git@github.com:LuffysMan/learngit.git 	//这里origin就是我们在本地对远程仓库的命名，可以起其他名字，比如learngitRemote也可
 git push -u origin master		//把本地分支master推送到远程库origin，参数-u只在第一次推送使用
@@ -72,7 +72,11 @@ git add readme.txt
 git commit -m "添加远程库测试"
 git push origin master				//把本地修改推送到Github
 //第一次添加远程库时，可能会出现SSH警告,让你选yes/no,选yes即可，具体可看廖老师课程			
-
+廖雪峰Lec10：从远程库克隆
+登录github网页版，创建新repository，命名为gitskills并勾选“initialized with readme.md”
+git clone git@github.com:LuffysMan/gitskills.git  		//在本地合适的位置克隆远程库
+cd gitskills/
+ls  													//查看本地，readme.md已经有了
 
 
 
